@@ -4,20 +4,20 @@
 /**
 * main - Entry point
 *
-* Return: Always 0 (Success)
+* Return - Always 0 (Success)
 */
 int main(void)
 {
-int d, p;
-for (d = '0'; d < '9'; d++)
+int a, b;
+for (a = '0'; a < '9'; a++)
 {
-for (p = d + 1; p <= '9'; p++)
+for (b = a + 1; b < '9'; b++)
 {
-if (p != d)
+if (a != b)
 {
-putchar(d);
-putchar(p);
-if (d == '8' && p == '9')
+putchar(a);
+putchar(b);
+if (a == '8' && b == '9')
 continue;
 putchar(',');
 putchar(' ');
