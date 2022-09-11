@@ -8,15 +8,19 @@
 */
 int main(void)
 {
-int t;
-for (t = 0; t < 100; t++)
+int t, m;
+for (t = '0'; m < '9'; t++)
+for (m = t + 1; m <= '9'; m++)
 {
-putchar((t / 10) + '0');
-putchar((t % 10) + '0');
-if (t != 99)
+if (m != t)
 {
+putchar(t);
+putchar(m);
+if (t == '8' && m == '9')
+continue;
 putchar(',');
 putchar(' ');
+}
 }
 }
 putchar('\n');
