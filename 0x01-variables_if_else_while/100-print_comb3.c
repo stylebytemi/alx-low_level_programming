@@ -9,7 +9,7 @@
 int main(void)
 {
 int t, m;
-for (t = '0'; m < '9'; t++)
+for (t = '0'; t < '9'; t++)
 for (m = t + 1; m <= '9'; m++)
 {
 if (m != t)
