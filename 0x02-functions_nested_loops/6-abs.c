@@ -4,10 +4,10 @@
 * @n :input number to check
 * Return: 0 or 1
 */
-int _abs(int n)
+int _abs(int p)
 {
-if (r >= 0)
-return (r);
+if (p >= 0)
+return (p);
 else
-return (r * -1);
+return (p * -1);
 }
