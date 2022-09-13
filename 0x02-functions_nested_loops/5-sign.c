@@ -6,21 +6,21 @@
 */
 int print_sign(int n)
 {
-int test;
+int checkSign;
 if (n > 0)
 {
-test = 1;
+checkSign = 1;
 _putchar('+');
 }
 else if (n == 0)
 {
-test = 0;
-_putchar('0')
+checkSign = 0;
+_putchar('0');
 }
 else
 {
-test = -1;
+checkSign = -1;
 _putchar('-');
 }
-return (test);
+return (checkSign);
 }
