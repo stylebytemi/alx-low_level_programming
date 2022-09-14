@@ -7,41 +7,47 @@
 */
 void print_times_table(int n)
 {
-int a = 0, multi, b;
-if (n < 0 || n > 15)
-return;
-while (a <= n)
+int i, j;
+if (n > 0 && n < 15)
 {
-for (b = 0; b <= n; b++)
+for (i = 0; i <= n; i++)
 {
-multi = a * b;
-if (b == 0)
-_putchar('0' + multi);
-else if (multi < 10)
-{
-_putchar(' ');
-_putchar(' ');
-_putchar('0' + multi);
+_putchar('0');
+for (j = 1; j <= n; j++)
+putformat(i * j);
+_putchar('\n');
 }
-else if (multi < 100)
-{
-_putchar(' ');
-_putchar('0' + multi / 10);
-_putchar('0' + multi % 10);
 }
-else
-{
-_putchar('0' + multi / 100);
-_putchar('0' + (multi - 100) / 100);
-_putchar('0' + multi % 10);
 }
-if (b < n)
+/**
+* putformat - formatted characters to output
+* @n: number to format
+* Return: nothing
+*/
+void putformat(int n)
+{
+if (n <= 9)
 {
 _putchar(',');
 _putchar(' ');
+_putchar(' ');
+_putchar(' ');
+_putchar(n + '0');
 }
+else if (n > 9 && n <= 99)
+{
+_putchar(',');
+_putchar(' ');
+_putchar(' ');
+_putchar(n / 10 + '0');
+_putchar(n % 10 + '0');
 }
-_putchar('\n');
-a++;
+else
+{
+_putchar(',');
+_putchar(' ');
+_putchar(n / 100 + '0');
+_putchar(n / 10 % 10 + '0');
+_putchar(n % 10 + '0');
 }
 }
