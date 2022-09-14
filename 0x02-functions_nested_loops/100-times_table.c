@@ -15,8 +15,8 @@ _putchar('0');
 for (j = 1; j <= n; j++)
 putformat(i * j);
 _putchar('\n');
-}      
-} 
+}
+}
 }
 /**
 * putformat - formatted characters to output
