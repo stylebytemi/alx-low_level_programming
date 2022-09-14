@@ -1,0 +1,11 @@
+#include "main.h"
+/**
+* add - return the summation of its paramenters
+* @num1: int type first number
+* @num2: int type second number
+* Return : 0
+*/
+int add(int num1, int num2)
+{
+return (num1 + num2);
+{
