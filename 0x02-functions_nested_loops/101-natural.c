@@ -4,7 +4,7 @@
 * of 3 or 5 below 1024
 * Return: 0 if sucessful
 */
-int main(void)  
+int main(void)
 {
 unsigned long int sum3, sum5, sum;
 int i;
@@ -19,7 +19,7 @@ sum3 = sum3 + i;
 }
 else if ((i % 5) == 0
 {
-sum5 = sum5 + i;	  
+sum5 = sum5 + i;
 }
 }
 sum = sum3 + sum5;
