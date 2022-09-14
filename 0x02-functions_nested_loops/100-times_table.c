@@ -1,52 +1,47 @@
 #include "main.h"
 /**
-* print_times_table - prints times table for numbers from 0-14
-* @n: An input integer value
-* Return: Nothing
+* print_times_table -  times table
+* @n : times table to use
+* Description: print times table
+* Return:void
 */
 void print_times_table(int n)
 {
-int i, j;
-if (n > 0 && n < 15)
+int a = 0, rep, b;
+if (n < 0 || n > 15)
+return;
+while (a <= n)
 {
-for (i = 0; i <= n; i++)
+for (b = 0; b <= n; b++)
 {
-_putchar('0');
-for (j = 1; j <= n; j++)
-putformat(i * j);
-_putchar('\n');
+rep = a * b;
+if (b == 0)
+_putchar('0' + rep);
+else if (rep < 10)
+{
+_putchar(' ');
+_putchar(' ');
+_putchar('0' + rep);
 }
-}
-}
-/**
-* putformat - formatted characters to output
-* @n: number to format
-* Return: nothing
-*/
-void putformat(int n)
+else if (rep < 100)
 {
-if (n <= 9)
-{
-_putchar(',');
 _putchar(' ');
-_putchar(' ');
-_putchar(' ');
-_putchar(n + '0');
-}
-else if (n > 9 && n <= 99)
-{
-_putchar(',');
-_putchar(' ');
-_putchar(' ');
-_putchar(n / 10 + '0');
-_putchar(n % 10 + '0');
+_putchar('0' + rep / 10);
+_putchar('0' + rep % 10);
 }
 else
 {
+_putchar('0' + rep / 100);
+_putchar('0' + (rep - 100) / 100);
+_putchar('0' + rep % 10);
+}
+if (b < n)
+{
 _putchar(',');
 _putchar(' ');
-_putchar(n / 100 + '0');
-_putchar(n / 10 % 10 + '0');
-_putchar(n % 10 + '0');
+}
+}
+_putchar('\n');
+a++;
 }
 }
