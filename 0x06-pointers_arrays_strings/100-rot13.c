@@ -1,27 +1,29 @@
 #include "main.h"
 /**
-*rot13 - encoding a string using rot13.
-*@s: the string to be encoded to rot13.
-*Return: the string s encoded to rot13.
+* rot13 - encodes a string using rot13
+* @str: the string to encode
+*
+* Return: encode string
 */
-char *rot13(char *s)
+char *rot13(char *str)
 {
-int i = 0, j = 0;
-char string_rot13[] = "NnOoPpQqRrSsTtUuVvWwXxYyZzAaBbCcDdEeFfGgHhIiJjKkLlMm";
-char string_alpha[] = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz";
-while (s[i] != '\0')
+int i, j;
+char alpha[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+char rot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+i = 0;
+while (str[i] != '\0')
 {
-do {
-if (s[i] == string_alpha[j])
+j = 0;
+while (alpha[j] != '\0')
 {
-s[i] = string_rot13[j];
+if (str[i] == alpha[j])
+{
+str[i] = rot[j];
 break;
 }
 j++;
 }
-while (string_alpha[j] != '\0')
-}
-j = 0;
 i++;
-return (s);
+}
+return (str);
 }
