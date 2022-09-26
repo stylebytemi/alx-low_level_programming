@@ -1,1 +1,1 @@
-Here, you will find solutions to ALX low level language Task
+solutions to 0x07-pointers_arrays_strings tasks
