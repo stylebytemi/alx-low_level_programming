@@ -2,67 +2,52 @@
 #include <stdlib.h>
 #include <ctype.h>
 /**
-* _isnumber - checks if string is a number
-* @s: string
-*
-* Return: On success 1.
-* If not a number, 0 is returned.
-*/
-int _isnumber(char *s)
-{
-int i, check, d;
-i = 0, d = 0, check = 1;
-if (*s == '-')
-i++;
-for (; *(s + i) != 0; i++)
-{
-d = isdigit(*(s + i);
-if (d == 0)
-{
-check = 0;
-break;
-}
-}
-return (check);
-}
-/**
-* main - Entry point
-*
-* @argc: Counts the number of parameters that go into main
-* @argv: Pointer of array of pointers containing strings entering main
-* Return: Always 0 (Success)
+* main - A proogram that prints the minimum number of coins to
+* make change for an amount of money
+* @argc: The arguements' counter
+* @argv: The argument's values
+* Return: 1 if the number of arguments passed is not exactly
+* or 0 in otherwise
 */
 int main(int argc, char **argv)
 {
-int j, ex, coins, cents, d;
-int c[5] = {25, 10, 5, 2, 1};
-ex = 1, j = 0, coins = 0;
+int amount, coins = 0;
 if (argc == 2)
 {
-if (_isnumber(argv[1]))
+amount = atoi(argv[1]);
+if (amount < 0)
 {
-ex = 0, cents = atoi(argv[1]);
-if (cents >= 0)
+printf("%d\n", 0);
+return (0);
+}
+if (amount % 25 >= 0)
 {
-while (cents != 0)
+coins += amount / 25;
+amount = amount % 25;
+}
+if (amount % 10 >= 0)
 {
-d = cents / c[j];
-if (d == 0)
+coins += amount / 10;
+amount = amount % 10;
+}
+if (amount % 5 >= 0)
 {
-j++;
+coins += amount / 5;
+amount = amount % 5;
+}
+if (amount % 2 >= 0)
+{
+coins += amount / 2;
+amount = amount % 2;
+}
+if (amount % 1 >= 0)
+coins += amount;
+printf("%d\n", coins);
+return (0);
 }
 else
 {
-coins += d;
-cents -= (d *c[j]);
+printf("Error\n");
+return (1);
 }
-}
-}
-}
-}
-if (ex == 0)
-printf("%i\n", coins);
-else
-printf("%s\n", "Error");
-return (ex);
 }
