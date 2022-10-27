@@ -15,5 +15,5 @@ if (max & xor)
 flips++;
 max <<= 1;
 }
-return (flips)
+return (flips);
 }
